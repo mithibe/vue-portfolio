@@ -1,14 +1,27 @@
-import './assets/main.css'
-
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-
 import App from './App.vue'
-import router from './router'
+import { createRouter, createWebHistory } from 'vue-router'
+import { createPinia } from 'pinia'
+import Home from './views/Home.vue'
+import About from './views/About.vue'
+import Projects from './views/Projects.vue'
 
-const app = createApp(App)
+// Create a Pinia instance
+const pinia = createPinia()
 
-app.use(createPinia())
-app.use(router)
+const routes = [
+  { path: '/', component: Home },
+  { path: '/about', component: About },
+  { path: '/projects', component: Projects }
+]
 
-app.mount('#app')
+const router = createRouter({
+  history: createWebHistory(),
+  routes
+})
+
+// Create the Vue app with Pinia
+createApp(App)
+  .use(pinia) // Use Pinia
+  .use(router)
+  .mount('#app')

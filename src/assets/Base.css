@@ -1,0 +1,10 @@
+:root {
+  --white-glass-colour: rgba(255, 255, 255, 0.125);
+  --black-glass-colour: rgba(0, 0, 0, 0.125);
+
+  --light-bg1-colour:;
+}
+
+body {
+  background-image: url(./images/giraffe.jpg);
+}
